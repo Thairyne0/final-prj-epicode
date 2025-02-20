@@ -1,11 +1,11 @@
 import MyHeroSection from "../components/MyHeroSection";
-import MyNavBar from "../components/MyNavBar";
+import MyBlackNavBar from "../components/MyBlackNavBar";
 import MyNewsLetter from "../components/MyNewsLetter";
 
 export default function HeroPage() {
   return (
     <div className="bg-black pb-28">
-      <MyNavBar></MyNavBar>
+      <MyBlackNavBar></MyBlackNavBar>
       <MyHeroSection></MyHeroSection>
       <MyNewsLetter></MyNewsLetter>
     </div>
