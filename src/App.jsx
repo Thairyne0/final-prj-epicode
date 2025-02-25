@@ -1,11 +1,11 @@
 import "./App.css";
-// import HeroPage from "./pages/HeroPage";
-import HomePage from "./pages/HomePage";
+import HeroPage from "./pages/HeroPage";
+// import HomePage from "./pages/HomePage";
 
 function App() {
   return (
     <>
-      <HomePage></HomePage>
+      <HeroPage></HeroPage>
     </>
   );
 }
