@@ -1,10 +1,11 @@
 import "./App.css";
+import SearchPage from "./pages/SearchPage";
 // import MyRegisterComponent from "./components/MyRegisterComponent";
 // import RegisterPage from "./pages/RegisterPage";
 // import MyLogInComponent from "./components/MyLogInComponent";
 // import HeroPage from "./pages/HeroPage";
 // import LogInPage from "./pages/LogInPage";
-import HomePage from "./pages/HomePage";
+// import HomePage from "./pages/HomePage";
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       {/* <MyLogInComponent></MyLogInComponent> */}
       {/* <HeroPage></HeroPage> */}
       {/* <LogInPage></LogInPage> */}
-      <HomePage></HomePage>
+      {/* <HomePage></HomePage> */}
       {/* <MyRegisterComponent></MyRegisterComponent> */}
+      <SearchPage></SearchPage>
     </>
   );
 }
