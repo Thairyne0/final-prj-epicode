@@ -1,5 +1,6 @@
 import MyNavBar from "../components/MyRedNavBar";
 import image from "../assets/imageCar.jpg";
+import MyDetailsComponent from "../components/MyDetailsComponent";
 
 export default function DetailsPage() {
   return (
@@ -34,7 +35,22 @@ export default function DetailsPage() {
               consectetur expedita quae? Ipsam quam aliquam omnis. Perspiciatis
               possimus praesentium est sed numquam! Animi, tempora! Recusandae
             </p>
+            <hr className="mt-28"></hr>
+            <div className="px-6 pt-4 pb-2">
+              <span className="inline-block bg-red-700 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 hover:bg-red-800 border-2 border-red-800">
+                #photography
+              </span>
+              <span className="inline-block bg-red-700 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 hover:bg-red-800 border-2 border-red-800">
+                #travel
+              </span>
+              <span className="inline-block bg-red-700 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 hover:bg-red-800 border-2 border-red-800">
+                #winter
+              </span>
+            </div>
           </div>
+        </section>
+        <section className="bg-gray-200 rounded-md col-span-4 lg:col-span-3 p-6 shadow-md shadow-gray-400 mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <MyDetailsComponent></MyDetailsComponent>
         </section>
       </main>
     </div>
