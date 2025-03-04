@@ -23,6 +23,14 @@ export default function MyDetailsComponent() {
         <strong>Lunedì</strong> - <strong>Venerdí</strong> :
         <strong> 08:00-16:00</strong>
       </p>
+      <div className="mt-6 ps-4">
+        <button
+          type="button"
+          className="text-white text-xl font-bold bg-gradient-to-r from-red-600 via-red-00 to-red-900 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 rounded-lg px-5 py-2.5 text-center me-2 mb-2"
+        >
+          Prenota un appuntamento
+        </button>
+      </div>
     </div>
   );
 }
