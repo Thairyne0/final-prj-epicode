@@ -1,7 +1,7 @@
 export default function MyDetailsComponent() {
   return (
     <div className="flex flex-col justify-around text-xl">
-      <h2 className="bg-red-800 rounded-md p-2 font-bold text-2xl mb-4">
+      <h2 className="bg-red-800 rounded-md p-2 font-bold text-2xl mb-4 shadow-md text-white">
         Dettagli del professionista
       </h2>
       <p className="ps-2">
@@ -16,7 +16,7 @@ export default function MyDetailsComponent() {
       <p className="ps-2">
         <strong>Indirizzo</strong>: Piazza Garibaldi 24 Milano 81021 Italia
       </p>
-      <h2 className="bg-red-800 rounded-md p-2 font-bold text-2xl my-4">
+      <h2 className="bg-red-800 rounded-md p-2 font-bold text-2xl my-4 shadow-md text-white">
         Orari
       </h2>
       <p className="ps-2">
