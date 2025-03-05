@@ -1,3 +1,4 @@
+import MyProfessionalForm from "../components/MyProfessionalForm";
 import MyNavBar from "../components/MyRedNavBar";
 
 export default function ProfessionalPage() {
@@ -8,7 +9,17 @@ export default function ProfessionalPage() {
           <MyNavBar></MyNavBar>
         </nav>
       </header>
-      <main></main>
+      <main className="p-10 lg:px-24">
+        <section className=" rounded-md p-6 shadow-md shadow-gray-400">
+          <h2 className="text-2xl font-bold mb-4">
+            Vuoi diventare un professionista sulla nostra piattaforma?
+          </h2>
+          <h2 className="text-xl mb-4">
+            Compila questo modulo e crea la tua pagina
+          </h2>
+          <MyProfessionalForm></MyProfessionalForm>
+        </section>
+      </main>
     </div>
   );
 }

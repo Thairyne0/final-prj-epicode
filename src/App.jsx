@@ -1,5 +1,6 @@
 import "./App.css";
-import AppointmentPage from "./pages/AppointmentPage";
+import ProfessionalPage from "./pages/ProfessionalPage";
+// import AppointmentPage from "./pages/AppointmentPage";
 // import DetailsPage from "./pages/DetailsPage";
 // import SearchPage from "./pages/SearchPage";
 // import MyRegisterComponent from "./components/MyRegisterComponent";
@@ -20,7 +21,8 @@ function App() {
       {/* <MyRegisterComponent></MyRegisterComponent> */}
       {/* <SearchPage></SearchPage> */}
       {/* <DetailsPage></DetailsPage> */}
-      <AppointmentPage></AppointmentPage>
+      {/* <AppointmentPage></AppointmentPage> */}
+      <ProfessionalPage></ProfessionalPage>
     </>
   );
 }
