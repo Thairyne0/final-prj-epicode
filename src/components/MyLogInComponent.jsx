@@ -23,7 +23,8 @@ export default function MyLogInComponent() {
         navigate("/home");
       }
     } catch (error) {
-      setError("Email o password errati :" + error);
+      setError("Email o password errati");
+      console.log(error);
     }
   };
 
