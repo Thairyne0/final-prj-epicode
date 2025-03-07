@@ -1,5 +1,6 @@
 import imageCar from "../assets/imageCar.jpg";
 import BlurText from "../externalComponents/BlurText";
+import { Link } from "react-router-dom";
 
 export default function MyHeroSection() {
   return (
@@ -20,8 +21,8 @@ export default function MyHeroSection() {
             Sul nostro sito abbiamo solo i migliori meccanici, pronti a dare il
             massimo per la tua auto. Trova il meccanico più vicino a te.
           </p>
-          <a
-            href="#"
+          <Link
+            to="/register"
             className="bg-red-800 inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-red-600 dark:focus:ring-primary-900"
           >
             Registrati ora
@@ -37,13 +38,13 @@ export default function MyHeroSection() {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/login"
             className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
           >
             Accedi
-          </a>
+          </Link>
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
           <img src={imageCar} alt="mockup" className="rounded-lg" />

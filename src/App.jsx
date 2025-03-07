@@ -1,29 +1,37 @@
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ProfessionalPage from "./pages/ProfessionalPage";
-// import AppointmentPage from "./pages/AppointmentPage";
-// import DetailsPage from "./pages/DetailsPage";
-// import SearchPage from "./pages/SearchPage";
-// import MyRegisterComponent from "./components/MyRegisterComponent";
-// import RegisterPage from "./pages/RegisterPage";
-// import MyLogInComponent from "./components/MyLogInComponent";
-// import HeroPage from "./pages/HeroPage";
-// import LogInPage from "./pages/LogInPage";
-// import HomePage from "./pages/HomePage";
+import AppointmentPage from "./pages/AppointmentPage";
+import DetailsPage from "./pages/DetailsPage";
+import SearchPage from "./pages/SearchPage";
+import MyRegisterComponent from "./components/MyRegisterComponent";
+import MyLogInComponent from "./components/MyLogInComponent";
+import HeroPage from "./pages/HeroPage";
+import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <>
-      {/* <RegisterPage></RegisterPage> */}
-      {/* <MyLogInComponent></MyLogInComponent> */}
-      {/* <HeroPage></HeroPage> */}
-      {/* <LogInPage></LogInPage> */}
-      {/* <HomePage></HomePage> */}
-      {/* <MyRegisterComponent></MyRegisterComponent> */}
-      {/* <SearchPage></SearchPage> */}
-      {/* <DetailsPage></DetailsPage> */}
-      {/* <AppointmentPage></AppointmentPage> */}
-      <ProfessionalPage></ProfessionalPage>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HeroPage></HeroPage>} />
+        <Route path="/login" element={<MyLogInComponent></MyLogInComponent>} />
+        <Route
+          path="/register"
+          element={<MyRegisterComponent></MyRegisterComponent>}
+        />
+        <Route path="/search" element={<SearchPage></SearchPage>} />
+        <Route path="/details" element={<DetailsPage></DetailsPage>} />
+        <Route
+          path="/appointment"
+          element={<AppointmentPage></AppointmentPage>}
+        />
+        <Route
+          path="/professional"
+          element={<ProfessionalPage></ProfessionalPage>}
+        />
+        <Route path="/home" element={<HomePage></HomePage>} />
+      </Routes>
+    </Router>
   );
 }
 

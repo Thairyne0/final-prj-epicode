@@ -8,12 +8,13 @@ import {
   MenuItems,
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const navigation = [
-  { name: "Home", href: "#", current: false },
-  { name: "Team", href: "#", current: false },
-  { name: "About Us", href: "#", current: false },
-  { name: "Info", href: "#", current: false },
+  { name: "Home", to: "/home", current: false },
+  { name: "Personal Page", to: "/personalPage", current: false },
+  { name: "About Us", to: "/aboutUs", current: false },
+  { name: "Info", to: "/info", current: false },
 ];
 
 function classNames(...classes) {
@@ -51,9 +52,9 @@ export default function MyNavBar() {
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.to}
                     aria-current={item.current ? "page" : undefined}
                     className={classNames(
                       item.current
@@ -63,7 +64,7 @@ export default function MyNavBar() {
                     )}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -130,8 +131,8 @@ export default function MyNavBar() {
           {navigation.map((item) => (
             <DisclosureButton
               key={item.name}
-              as="a"
-              href={item.href}
+              as="Link"
+              to={item.to}
               aria-current={item.current ? "page" : undefined}
               className={classNames(
                 item.current
