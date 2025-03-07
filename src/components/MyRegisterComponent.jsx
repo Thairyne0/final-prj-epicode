@@ -7,6 +7,9 @@ export default function MyRegisterComponent() {
     username: "",
     password: "",
     second_password: "",
+    nome: "",
+    cognome: "",
+    isAPro: false,
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -36,6 +39,9 @@ export default function MyRegisterComponent() {
           email: formData.email,
           username: formData.username,
           password: formData.password,
+          nome: formData.nome,
+          cognome: formData.cognome,
+          isAPro: formData.isAPro,
         }),
       });
 
@@ -66,6 +72,32 @@ export default function MyRegisterComponent() {
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           {error && <p className="text-red-600 text-center">{error}</p>}
           <form onSubmit={handleSubmit} className="space-y-6">
+            <div>
+              <label className="block text-sm/6 font-medium text-gray-900">
+                Nome
+              </label>
+              <input
+                name="nome"
+                type="text"
+                required
+                value={formData.nome}
+                onChange={handleChange}
+                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-red-900 sm:text-sm/6"
+              />
+            </div>
+            <div>
+              <label className="block text-sm/6 font-medium text-gray-900">
+                Cognome
+              </label>
+              <input
+                name="cognome"
+                type="text"
+                required
+                value={formData.cognome}
+                onChange={handleChange}
+                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-red-900 sm:text-sm/6"
+              />
+            </div>
             <div>
               <label className="block text-sm/6 font-medium text-gray-900">
                 Email
