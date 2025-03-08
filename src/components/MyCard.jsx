@@ -1,34 +1,29 @@
-export default function MyCard() {
+import PropTypes from "prop-types";
+
+export default function MyCard({ mechanic }) {
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl">
       <a href="#">
         <img
-          className="w-full"
-          src="https://placecats.com/neo/300/200"
-          alt="Sunset in the mountains"
+          className="w-full h-48 object-cover"
+          src={`http://localhost:8080/api/mechanics/image/${mechanic.idProfessionista}`}
+          alt={mechanic.NomeAzienda}
         />
         <div className="px-6 py-4">
           <h2 className="font-bold text-xl mb-2 hover:text-red-800">
-            The Coldest Sunset
+            {mechanic.NomeAzienda}
           </h2>
-          <p className="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatibus quia, nulla! Maiores et perferendis eaque,
-            exercitationem praesentium nihil.
-          </p>
-        </div>
-        <div className="px-6 pt-4 pb-2">
-          <span className="inline-block bg-red-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 hover:bg-red-800">
-            #photography
-          </span>
-          <span className="inline-block bg-red-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 hover:bg-red-800">
-            #travel
-          </span>
-          <span className="inline-block bg-red-900 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2 hover:bg-red-800">
-            #winter
-          </span>
+          <p className="text-gray-700 text-base">{mechanic.indirizzo}</p>
         </div>
       </a>
     </div>
   );
 }
+
+MyCard.propTypes = {
+  mechanic: PropTypes.shape({
+    idProfessionista: PropTypes.number.isRequired,
+    NomeAzienda: PropTypes.string.isRequired,
+    indirizzo: PropTypes.string.isRequired,
+  }).isRequired,
+};

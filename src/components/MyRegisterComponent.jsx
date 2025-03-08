@@ -30,20 +30,23 @@ export default function MyRegisterComponent() {
     }
 
     try {
-      const response = await fetch("http://localhost:8080/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: formData.email,
-          username: formData.username,
-          password: formData.password,
-          nome: formData.nome,
-          cognome: formData.cognome,
-          isAPro: formData.isAPro,
-        }),
-      });
+      const response = await fetch(
+        "http://localhost:8080/api/utenti/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: formData.email,
+            username: formData.username,
+            password: formData.password,
+            nome: formData.nome,
+            cognome: formData.cognome,
+            isAPro: formData.isAPro,
+          }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Errore durante la registrazione");

@@ -8,6 +8,9 @@ export default function PersonalPage() {
           <MyNavBar></MyNavBar>
         </nav>
       </header>
+      <main>
+        <section></section>
+      </main>
     </div>
   );
 }
