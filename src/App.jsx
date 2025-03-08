@@ -8,6 +8,7 @@ import MyRegisterComponent from "./components/MyRegisterComponent";
 import MyLogInComponent from "./components/MyLogInComponent";
 import HeroPage from "./pages/HeroPage";
 import HomePage from "./pages/HomePage";
+import PersonalPage from "./pages/PersonalPage";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           element={<ProfessionalPage></ProfessionalPage>}
         />
         <Route path="/home" element={<HomePage></HomePage>} />
+        <Route path="/personalPage" element={<PersonalPage></PersonalPage>} />
       </Routes>
     </Router>
   );
