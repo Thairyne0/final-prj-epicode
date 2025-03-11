@@ -1,27 +1,34 @@
-export default function MyDetailsComponent() {
+import PropTypes from "prop-types";
+
+export default function MyDetailsComponent({ mechanic }) {
+  if (!mechanic) {
+    return <p>Caricamento in corso...</p>;
+  }
+
   return (
     <div className="flex flex-col justify-around text-xl">
       <h2 className="bg-red-800 rounded-md p-2 font-bold text-2xl mb-4 shadow-md text-white">
         Dettagli del professionista
       </h2>
       <p className="ps-2">
-        <strong>Nome</strong>: Mario Rossi
+        <strong>Nome</strong>: {mechanic.nome} {mechanic.cognome}
       </p>
       <p className="ps-2">
-        <strong>Cellulare</strong>: 333 1234567
+        <strong>Cellulare</strong>: {mechanic.telefono || "Non disponibile"}
       </p>
       <p className="ps-2">
-        <strong>Email</strong>: marioRossi@outlook.com
+        <strong>Email</strong>: {mechanic.email}
       </p>
       <p className="ps-2">
-        <strong>Indirizzo</strong>: Piazza Garibaldi 24 Milano 81021 Italia
+        <strong>Indirizzo</strong>: {mechanic.indirizzo}, {mechanic.citta},{" "}
+        {mechanic.provincia}, {mechanic.cap}, {mechanic.regione}
       </p>
       <h2 className="bg-red-800 rounded-md p-2 font-bold text-2xl my-4 shadow-md text-white">
         Orari
       </h2>
       <p className="ps-2">
-        <strong>Lunedì</strong> - <strong>Venerdí</strong> :
-        <strong> 08:00-16:00</strong>
+        <strong>Lunedì</strong> - <strong>Venerdì</strong> :{" "}
+        <strong>{mechanic.orari || "Non disponibili"}</strong>
       </p>
       <div className="mt-6 ps-4">
         <button
@@ -34,3 +41,18 @@ export default function MyDetailsComponent() {
     </div>
   );
 }
+
+MyDetailsComponent.propTypes = {
+  mechanic: PropTypes.shape({
+    nome: PropTypes.string,
+    cognome: PropTypes.string,
+    telefono: PropTypes.string,
+    email: PropTypes.string,
+    indirizzo: PropTypes.string,
+    citta: PropTypes.string,
+    provincia: PropTypes.string,
+    cap: PropTypes.string,
+    regione: PropTypes.string,
+    orari: PropTypes.string,
+  }),
+};

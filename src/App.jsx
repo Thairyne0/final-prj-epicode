@@ -21,7 +21,7 @@ function App() {
           element={<MyRegisterComponent></MyRegisterComponent>}
         />
         <Route path="/search" element={<SearchPage></SearchPage>} />
-        <Route path="/details" element={<DetailsPage></DetailsPage>} />
+        <Route path="/details/:id" element={<DetailsPage></DetailsPage>} />
         <Route
           path="/appointment"
           element={<AppointmentPage></AppointmentPage>}

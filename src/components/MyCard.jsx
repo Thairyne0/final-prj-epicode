@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import bkImage from "../assets/imageCar.jpg";
+import { Link } from "react-router-dom";
 
 export default function MyCard({ mechanic }) {
   const [imageSrc, setImageSrc] = useState(null);
@@ -28,7 +29,7 @@ export default function MyCard({ mechanic }) {
 
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl">
-      <a href="#">
+      <Link to={"/details/" + mechanic.idProfessionista}>
         {imageSrc ? (
           <img
             className="w-full h-48 object-cover"
@@ -51,7 +52,7 @@ export default function MyCard({ mechanic }) {
           </h2>
           <p className="text-gray-700 text-base">{mechanic.indirizzo}</p>
         </div>
-      </a>
+      </Link>
     </div>
   );
 }

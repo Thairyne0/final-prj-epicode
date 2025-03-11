@@ -53,7 +53,7 @@ export default function PersonalPage() {
       </header>
       <main>
         <section className=" rounded-md p-6 shadow-md shadow-gray-400 m-10">
-          <div className="rounded-md flex items-center justify-center px-36 ">
+          <div className="rounded-md flex items-center justify-center px-4 md:px-36 lg:px-56 ">
             <img
               src={image}
               alt="imagine professionista"
