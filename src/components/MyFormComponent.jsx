@@ -1,9 +1,99 @@
 import { PhotoIcon } from "@heroicons/react/24/solid";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import TimePicker from "react-time-picker";
+import "react-time-picker/dist/TimePicker.css";
 
 export default function MyFormComponent() {
+  const [dataPrenotazione, setDataPrenotazione] = useState(new Date());
+  const [orarioPrenotazione, setOrarioPrenotazione] = useState("12:00");
+
+  const [formData, setFormData] = useState({
+    marcaVeicolo: "",
+    modelloVeicolo: "",
+    descrizioneProblema: "",
+    nomeUtente: "",
+    cognomeUtente: "",
+    emailUtente: "",
+    indirizzo: "",
+    citta: "",
+    provincia: "",
+    cap: "",
+    regione: "",
+    dataPrenotazione: dataPrenotazione.toISOString().split("T")[0],
+    orarioPrenotazione: orarioPrenotazione + ":00",
+  });
+
+  const { id } = useParams();
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      alert("Errore: Utente non autenticato.");
+      return;
+    }
+
+    let userId;
+    try {
+      const payload = JSON.parse(atob(token.split(".")[1]));
+      userId = payload.userId;
+      console.log(userId);
+    } catch (error) {
+      console.log("Errore nella decodifica del token:", error);
+      alert("Errore: Token non valido.");
+      return;
+    }
+
+    const requestBody = {
+      ...formData,
+      idProfessionista: id,
+      utenteId: userId,
+    };
+
+    console.log(requestBody);
+
+    try {
+      const response = await fetch(
+        "http://localhost:8080/api/prenotazioni/crea",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(requestBody),
+        }
+      );
+
+      if (response.ok) {
+        console.log(requestBody);
+        alert("Prenotazione effettuata con successo!");
+      } else {
+        const errorData = await response.json();
+        alert(`Errore nella prenotazione: ${errorData.message}`);
+      }
+    } catch (error) {
+      console.log(requestBody);
+      console.error("Errore nella richiesta:", error);
+      alert("Errore imprevisto. Riprova più tardi.");
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
           <h2 className="text-base/7 font-semibold text-gray-900">
@@ -17,7 +107,7 @@ export default function MyFormComponent() {
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-4">
               <label
-                htmlFor="name"
+                htmlFor="marcaVeicolo"
                 className="block text-sm/6 font-medium text-gray-900"
               >
                 Marca Veicolo
@@ -25,10 +115,12 @@ export default function MyFormComponent() {
               <div className="mt-2">
                 <div className="flex items-center rounded-md bg-white pl-3 outline outline-1 -outline-offset-1 outline-gray-300 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
                   <input
-                    id="name"
-                    name="name"
+                    id="marcaVeicolo"
+                    name="marcaVeicolo"
                     type="text"
                     placeholder="BMW, Fiat, Audi, ..."
+                    value={formData.marcaVeicolo}
+                    onChange={handleChange}
                     className="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
                   />
                 </div>
@@ -37,7 +129,7 @@ export default function MyFormComponent() {
 
             <div className="sm:col-span-4">
               <label
-                htmlFor="surname"
+                htmlFor="modelloVeicolo"
                 className="block text-sm/6 font-medium text-gray-900"
               >
                 Modello Veicolo
@@ -45,10 +137,12 @@ export default function MyFormComponent() {
               <div className="mt-2">
                 <div className="flex items-center rounded-md bg-white pl-3 outline outline-1 -outline-offset-1 outline-gray-300 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
                   <input
-                    id="surname"
-                    name="surname"
+                    id="modelloVeicolo"
+                    name="modelloVeicolo"
                     type="text"
                     placeholder="Punto, Ibiza, Polo, ..."
+                    value={formData.modelloVeicolo}
+                    onChange={handleChange}
                     className="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
                   />
                 </div>
@@ -57,18 +151,19 @@ export default function MyFormComponent() {
 
             <div className="col-span-full">
               <label
-                htmlFor="about"
+                htmlFor="descrizioneProblema"
                 className="block text-sm/6 font-medium text-gray-900"
               >
                 Descrivi il problema della tua auto
               </label>
               <div className="mt-2">
                 <textarea
-                  id="about"
-                  name="about"
+                  id="descrizioneProblema"
+                  name="descrizioneProblema"
+                  value={formData.descrizioneProblema}
+                  onChange={handleChange}
                   rows={3}
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                  defaultValue={""}
                 />
               </div>
             </div>
@@ -118,16 +213,18 @@ export default function MyFormComponent() {
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-3">
               <label
-                htmlFor="first-name"
+                htmlFor="nomeUtente"
                 className="block text-sm/6 font-medium text-gray-900"
               >
                 Nome
               </label>
               <div className="mt-2">
                 <input
-                  id="first-name"
-                  name="first-name"
+                  id="nomeUtente"
+                  name="nomeUtente"
                   type="text"
+                  value={formData.nomeUtente}
+                  onChange={handleChange}
                   autoComplete="given-name"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
@@ -136,16 +233,18 @@ export default function MyFormComponent() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="last-name"
+                htmlFor="cognomeUtente"
                 className="block text-sm/6 font-medium text-gray-900"
               >
                 Cognome
               </label>
               <div className="mt-2">
                 <input
-                  id="last-name"
-                  name="last-name"
+                  id="cognomeUtente"
+                  name="cognomeUtente"
                   type="text"
+                  value={formData.cognomeUtente}
+                  onChange={handleChange}
                   autoComplete="family-name"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
@@ -154,16 +253,18 @@ export default function MyFormComponent() {
 
             <div className="sm:col-span-4">
               <label
-                htmlFor="email"
+                htmlFor="emailUtente"
                 className="block text-sm/6 font-medium text-gray-900"
               >
                 Indirizzo Email
               </label>
               <div className="mt-2">
                 <input
-                  id="email"
-                  name="email"
+                  id="emailUtente"
+                  name="emailUtente"
                   type="email"
+                  value={formData.emailUtente}
+                  onChange={handleChange}
                   autoComplete="email"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
@@ -172,16 +273,18 @@ export default function MyFormComponent() {
 
             <div className="sm:col-span-3">
               <label
-                htmlFor="country"
+                htmlFor="regione"
                 className="block text-sm/6 font-medium text-gray-900"
               >
                 Regione
               </label>
               <div className="mt-2 grid grid-cols-1">
                 <select
-                  id="country"
-                  name="country"
+                  id="regione"
+                  name="regione"
                   autoComplete="country-name"
+                  value={formData.regione}
+                  onChange={handleChange}
                   className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 >
                   <option>Abruzzo</option>
@@ -214,16 +317,18 @@ export default function MyFormComponent() {
 
             <div className="col-span-full">
               <label
-                htmlFor="street-address"
+                htmlFor="indirizzo"
                 className="block text-sm/6 font-medium text-gray-900"
               >
                 Indirizzo
               </label>
               <div className="mt-2">
                 <input
-                  id="street-address"
-                  name="street-address"
+                  id="indirizzo"
+                  name="indirizzo"
                   type="text"
+                  value={formData.indirizzo}
+                  onChange={handleChange}
                   autoComplete="street-address"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
@@ -232,16 +337,18 @@ export default function MyFormComponent() {
 
             <div className="sm:col-span-2 sm:col-start-1">
               <label
-                htmlFor="city"
+                htmlFor="citta"
                 className="block text-sm/6 font-medium text-gray-900"
               >
                 Cittá
               </label>
               <div className="mt-2">
                 <input
-                  id="city"
-                  name="city"
+                  id="citta"
+                  name="citta"
                   type="text"
+                  value={formData.citta}
+                  onChange={handleChange}
                   autoComplete="address-level2"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
@@ -250,16 +357,18 @@ export default function MyFormComponent() {
 
             <div className="sm:col-span-2">
               <label
-                htmlFor="region"
+                htmlFor="provincia"
                 className="block text-sm/6 font-medium text-gray-900"
               >
                 Stato / Provincia
               </label>
               <div className="mt-2">
                 <input
-                  id="region"
-                  name="region"
+                  id="provincia"
+                  name="provincia"
                   type="text"
+                  value={formData.provincia}
+                  onChange={handleChange}
                   autoComplete="address-level1"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
@@ -268,18 +377,48 @@ export default function MyFormComponent() {
 
             <div className="sm:col-span-2">
               <label
-                htmlFor="postal-code"
+                htmlFor="cap"
                 className="block text-sm/6 font-medium text-gray-900"
               >
                 CAP
               </label>
               <div className="mt-2">
                 <input
-                  id="postal-code"
-                  name="postal-code"
+                  id="cap"
+                  name="cap"
                   type="text"
+                  value={formData.cap}
+                  onChange={handleChange}
                   autoComplete="postal-code"
                   className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-2">
+              <div className="mb-4">
+                <label className="block font-medium mb-1">
+                  Seleziona la data:
+                </label>
+                <DatePicker
+                  selected={formData.dataPrenotazione}
+                  onChange={(date) => setDataPrenotazione(date)}
+                  dateFormat="yyyy-MM-dd"
+                  className="border p-2 rounded w-full"
+                />
+              </div>
+            </div>
+
+            <div className="sm:col-span-4">
+              <div className="mb-4">
+                <label className="block font-medium mb-1">
+                  Seleziona orario:
+                </label>
+                <TimePicker
+                  onChange={setOrarioPrenotazione}
+                  value={formData.orarioPrenotazione}
+                  disableClock
+                  className="border p-2 rounded w-full"
                 />
               </div>
             </div>
