@@ -2,6 +2,7 @@ import MyNavBar from "../components/MyRedNavBar";
 import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import image from "../assets/imageCar.jpg";
+import MyAllPrenotazioneComponent from "../components/MyAllPrenotazioniComponent";
 
 export default function PersonalPage() {
   const [professionalData, setProfessionalData] = useState(null);
@@ -52,7 +53,7 @@ export default function PersonalPage() {
         </nav>
       </header>
       <main>
-        <section className=" rounded-md p-6 shadow-md shadow-gray-400 m-10">
+        <section className="rounded-md p-6 shadow-md shadow-gray-400 m-10">
           <div className="rounded-md flex items-center justify-center px-4 md:px-36 lg:px-56 ">
             <img
               src={image}
@@ -76,6 +77,10 @@ export default function PersonalPage() {
             {professionalData.citta}, {professionalData.provincia} -{" "}
             {professionalData.cap}
           </p>
+        </section>
+        <section className=" rounded-md p-6 shadow-md shadow-gray-400 m-10 bg-red-900 text-white">
+          <h2 className="text-2xl font-bold mb-4">Le tue prenotazioni</h2>
+          <MyAllPrenotazioneComponent idProfessionista={userId} />
         </section>
       </main>
     </div>
