@@ -15,6 +15,7 @@ const navigation = [
   { name: "Personal Page", to: "/personalPage", current: false },
   { name: "About Us", to: "/aboutUs", current: false },
   { name: "Info", to: "/info", current: false },
+  { name: "Cerca", to: "/search", current: false },
 ];
 
 function classNames(...classes) {
