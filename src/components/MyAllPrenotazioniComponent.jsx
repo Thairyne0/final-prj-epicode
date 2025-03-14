@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 const MyAllPrenotazioneComponent = ({ idProfessionista }) => {
   const [prenotazioni, setPrenotazioni] = useState([]);
@@ -46,7 +47,14 @@ const MyAllPrenotazioneComponent = ({ idProfessionista }) => {
           <tbody>
             {prenotazioni.map((prenotazione) => (
               <tr key={prenotazione.id} className="hover:bg-gray-50">
-                <td className="border p-2">{prenotazione.id}</td>
+                <td className="border p-2">
+                  <Link
+                    to={`/prenotazione/details/${prenotazione.id}`}
+                    className="text-blue-600 hover:underline"
+                  >
+                    {prenotazione.id}
+                  </Link>
+                </td>
                 <td className="border p-2">{prenotazione.dataPrenotazione}</td>
                 <td className="border p-2">
                   {prenotazione.orarioPrenotazione}

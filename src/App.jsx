@@ -9,6 +9,7 @@ import MyLogInComponent from "./components/MyLogInComponent";
 import HeroPage from "./pages/HeroPage";
 import HomePage from "./pages/HomePage";
 import PersonalPage from "./pages/PersonalPage";
+import AppointmentDetailsPage from "./pages/AppointmentDetailsPage";
 
 function App() {
   return (
@@ -25,6 +26,10 @@ function App() {
         <Route
           path="/appointment/:id"
           element={<AppointmentPage></AppointmentPage>}
+        />
+        <Route
+          path="/prenotazione/details/:prenotazioneId"
+          element={<AppointmentDetailsPage></AppointmentDetailsPage>}
         />
         <Route
           path="/professional"
