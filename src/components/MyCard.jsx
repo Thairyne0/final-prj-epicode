@@ -28,7 +28,7 @@ export default function MyCard({ mechanic }) {
   }, [mechanic.idProfessionista]);
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl">
+    <div className="bg-black text-white  max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl">
       <Link to={"/details/" + mechanic.idProfessionista}>
         {imageSrc ? (
           <img
@@ -50,7 +50,7 @@ export default function MyCard({ mechanic }) {
           <h2 className="font-bold text-xl mb-2 hover:text-red-800">
             {mechanic.nomeAzienda}
           </h2>
-          <p className="text-gray-700 text-base">{mechanic.indirizzo}</p>
+          <p className="text-red-700 text-base">{mechanic.indirizzo}</p>
         </div>
       </Link>
     </div>
