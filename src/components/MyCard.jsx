@@ -28,7 +28,7 @@ export default function MyCard({ mechanic }) {
   }, [mechanic.idProfessionista]);
 
   return (
-    <div className="bg-black text-white  max-w-sm rounded overflow-hidden shadow-lg hover:shadow-2xl">
+    <div className="bg-[#1c1c1d] text-white  max-w-sm rounded overflow-hidden shadow-lg hover:bg-red-800 hover:text-white">
       <Link to={"/details/" + mechanic.idProfessionista}>
         {imageSrc ? (
           <img
@@ -47,10 +47,10 @@ export default function MyCard({ mechanic }) {
           </div>
         )}
         <div className="px-6 py-4">
-          <h2 className="font-bold text-xl mb-2 hover:text-red-800">
-            {mechanic.nomeAzienda}
-          </h2>
-          <p className="text-red-700 text-base">{mechanic.indirizzo}</p>
+          <h2 className="font-bold text-xl mb-2 ">{mechanic.nomeAzienda}</h2>
+          <p className="text-white bg-red-800 rounded-md ps-2 py-1">
+            {mechanic.indirizzo}
+          </p>
         </div>
       </Link>
     </div>

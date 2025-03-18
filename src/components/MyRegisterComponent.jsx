@@ -67,7 +67,7 @@ export default function MyRegisterComponent() {
             src="https://tailwindui.com/plus-assets/img/logos/mark.svg?color=red&shade=900"
             className="mx-auto h-10 w-auto"
           />
-          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-gray-900">
+          <h2 className="mt-10 text-center text-2xl/9 font-bold tracking-tight text-red-800">
             Registra il tuo account
           </h2>
         </div>
@@ -76,7 +76,7 @@ export default function MyRegisterComponent() {
           {error && <p className="text-red-600 text-center">{error}</p>}
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-sm/6 font-medium text-gray-900">
+              <label className="block text-sm/6 text-red-800 font-bold">
                 Nome
               </label>
               <input
@@ -89,7 +89,7 @@ export default function MyRegisterComponent() {
               />
             </div>
             <div>
-              <label className="block text-sm/6 font-medium text-gray-900">
+              <label className="block text-sm/6  text-red-800 font-bold">
                 Cognome
               </label>
               <input
@@ -102,7 +102,7 @@ export default function MyRegisterComponent() {
               />
             </div>
             <div>
-              <label className="block text-sm/6 font-medium text-gray-900">
+              <label className="block text-sm/6  text-red-800 font-bold">
                 Email
               </label>
               <input
@@ -116,7 +116,7 @@ export default function MyRegisterComponent() {
             </div>
 
             <div>
-              <label className="block text-sm/6 font-medium text-gray-900">
+              <label className="block text-sm/6  text-red-800 font-bold">
                 Username
               </label>
               <input
@@ -130,7 +130,7 @@ export default function MyRegisterComponent() {
             </div>
 
             <div>
-              <label className="block text-sm/6 font-medium text-gray-900">
+              <label className="block text-sm/6  text-red-800 font-bold">
                 Password
               </label>
               <input
@@ -144,7 +144,7 @@ export default function MyRegisterComponent() {
             </div>
 
             <div>
-              <label className="block text-sm/6 font-medium text-gray-900">
+              <label className="block text-sm/6  text-red-800 font-bold">
                 Ripeti password
               </label>
               <input
