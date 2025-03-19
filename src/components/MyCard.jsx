@@ -48,7 +48,7 @@ export default function MyCard({ mechanic }) {
         )}
         <div className="px-6 py-4">
           <h2 className="font-bold text-xl mb-2 ">{mechanic.nomeAzienda}</h2>
-          <p className="text-white bg-red-800 rounded-md ps-2 py-1">
+          <p className="text-white bg-red-800 rounded-lg ps-2 py-1">
             {mechanic.indirizzo}
           </p>
         </div>

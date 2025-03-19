@@ -32,14 +32,14 @@ export default function DetailsPage() {
   }
 
   return (
-    <div className="bg-white pb-28">
+    <div className="bg-[#1c1c1d] pb-28">
       <header>
         <nav>
           <MyNavBar />
         </nav>
       </header>
       <main className="p-10 lg:px-24">
-        <section className="bg-red-900 rounded-md col-span-4 lg:col-span-3 p-6 shadow-md shadow-gray-400 mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <section className="bg-red-900 rounded-md col-span-4 lg:col-span-3 p-6 mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="grid grid-cols-1 lg:grid-cols-6 gap-4">
             <div className="col-span-3">
               <img
@@ -56,11 +56,11 @@ export default function DetailsPage() {
               />
             </div>
           </div>
-          <div className="bg-neutral-300 rounded-md flex flex-col justify-start p-4 shadow-md">
-            <h2 className="text-2xl font-bold text-red-900 mb-4">
+          <div className="bg-[#1c1c1d] rounded-md flex flex-col justify-start p-4">
+            <h2 className="text-2xl font-bold text-red-700 mb-4">
               {mechanic.nomeAzienda}
             </h2>
-            <p className="text-black text-xl font-semibold">
+            <p className=" text-xl font-semibold text-white">
               {mechanic.descrizione}
             </p>
             <hr className="mt-16" />
@@ -74,7 +74,7 @@ export default function DetailsPage() {
             </div>
           </div>
         </section>
-        <section className="bg-neutral-300 rounded-md col-span-4 lg:col-span-3 p-6 shadow-md shadow-gray-400 mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <section className="bg-red-900 rounded-md col-span-4 lg:col-span-3 p-6 mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
           <MyDetailsComponent mechanic={mechanic} />
         </section>
       </main>

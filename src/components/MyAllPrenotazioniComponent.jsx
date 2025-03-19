@@ -30,14 +30,14 @@ const MyAllPrenotazioneComponent = ({ idProfessionista }) => {
   }
 
   return (
-    <div className="p-4 bg-white shadow rounded-lg text-black">
+    <div className="p-4 bg-[#1c1c1d] shadow rounded-lg text-white">
       <h2 className="text-xl font-bold mb-4">Prenotazioni ricevute</h2>
       {prenotazioni.length === 0 ? (
         <p>Nessuna prenotazione trovata.</p>
       ) : (
-        <table className="w-full border-collapse border border-gray-300">
+        <table className="w-full border-collapse border border-red-900">
           <thead>
-            <tr className="bg-gray-100">
+            <tr className="bg-red-900 text-white">
               <th className="border p-2">ID Prenotazione</th>
               <th className="border p-2">Data</th>
               <th className="border p-2">Orario</th>
@@ -46,11 +46,11 @@ const MyAllPrenotazioneComponent = ({ idProfessionista }) => {
           </thead>
           <tbody>
             {prenotazioni.map((prenotazione) => (
-              <tr key={prenotazione.id} className="hover:bg-gray-50">
+              <tr key={prenotazione.id} className="hover:bg-red-900">
                 <td className="border p-2">
                   <Link
                     to={`/prenotazione/details/${prenotazione.id}`}
-                    className="text-blue-600 hover:underline"
+                    className="text-white hover:underline"
                   >
                     {prenotazione.id}
                   </Link>

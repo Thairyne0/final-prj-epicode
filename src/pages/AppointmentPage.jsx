@@ -6,14 +6,14 @@ export default function AppointmentPage() {
   const { mechanicId } = useParams();
 
   return (
-    <div className="bg-white pb-28">
+    <div className="bg-[#1c1c1d] pb-28">
       <header>
         <nav>
           <MyNavBar />
         </nav>
       </header>
       <main className="p-10 lg:px-24">
-        <section className="rounded-md p-6 shadow-md shadow-gray-400">
+        <section className="rounded-md p-6 bg-red-900">
           <MyFormComponent mechanicId={Number(mechanicId)} />
         </section>
       </main>

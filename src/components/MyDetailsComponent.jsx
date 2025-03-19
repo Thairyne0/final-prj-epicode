@@ -16,26 +16,26 @@ export default function MyDetailsComponent({ mechanic }) {
 
   return (
     <div className="flex flex-col justify-around text-xl">
-      <h2 className="bg-red-800 rounded-md p-2 font-bold text-2xl mb-4 shadow-md text-white">
+      <h2 className="bg-[#1c1c1d] rounded-md p-2 font-bold text-2xl mb-4 shadow-md text-white">
         Dettagli del professionista
       </h2>
-      <p className="ps-2">
+      <p className="ps-2 text-white">
         <strong>Nome</strong>: {mechanic.nome} {mechanic.cognome}
       </p>
-      <p className="ps-2">
+      <p className="ps-2 text-white">
         <strong>Cellulare</strong>: {mechanic.telefono || "Non disponibile"}
       </p>
-      <p className="ps-2">
+      <p className="ps-2 text-white">
         <strong>Email</strong>: {mechanic.email}
       </p>
-      <p className="ps-2">
+      <p className="ps-2 text-white">
         <strong>Indirizzo</strong>: {mechanic.indirizzo}, {mechanic.citta},{" "}
         {mechanic.provincia}, {mechanic.cap}, {mechanic.regione}
       </p>
-      <h2 className="bg-red-800 rounded-md p-2 font-bold text-2xl my-4 shadow-md text-white">
+      <h2 className="bg-[#1c1c1d] rounded-md p-2 font-bold text-2xl my-4 shadow-md text-white">
         Orari
       </h2>
-      <p className="ps-2">
+      <p className="ps-2 text-white">
         <strong>Lunedì</strong> - <strong>Venerdì</strong> :{" "}
         <strong>{mechanic.orari || "Non disponibili"}</strong>
       </p>
@@ -43,7 +43,7 @@ export default function MyDetailsComponent({ mechanic }) {
         <button
           type="button"
           onClick={handleAppointmentClick}
-          className="text-white text-xl font-bold bg-gradient-to-r from-red-600 via-red-00 to-red-900 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 rounded-lg px-5 py-2.5 text-center me-2 mb-2"
+          className="text-white text-xl font-bold bg-gradient-to-r from-red-600 via-red-00 to-red-800 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 rounded-lg px-5 py-2.5 text-center me-2 mb-2"
         >
           Prenota un appuntamento
         </button>

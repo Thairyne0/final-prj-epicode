@@ -96,10 +96,10 @@ export default function MyFormComponent() {
     <form onSubmit={handleSubmit}>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base/7 font-semibold text-gray-900">
+          <h2 className=" font-bold text-2xl text-white">
             Prenotazione appuntamento
           </h2>
-          <p className="mt-1 text-sm/6 text-gray-600">
+          <p className="mt-1 text-sm/6 text-white">
             Queste informazioni saranno visualizzate dal professionista per
             poterti garantire il miglior servizio possibile.
           </p>
@@ -108,12 +108,12 @@ export default function MyFormComponent() {
             <div className="sm:col-span-4">
               <label
                 htmlFor="marcaVeicolo"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-white"
               >
                 Marca Veicolo
               </label>
               <div className="mt-2">
-                <div className="flex items-center rounded-md bg-white pl-3 outline outline-1 -outline-offset-1 outline-gray-300 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                <div className="flex items-center rounded-md bg-[#1c1c1d] pl-3 outline outline-1 -outline-offset-1  focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
                   <input
                     id="marcaVeicolo"
                     name="marcaVeicolo"
@@ -121,7 +121,7 @@ export default function MyFormComponent() {
                     placeholder="BMW, Fiat, Audi, ..."
                     value={formData.marcaVeicolo}
                     onChange={handleChange}
-                    className="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
+                    className="bg-[#1c1c1d] block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-white placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -130,12 +130,12 @@ export default function MyFormComponent() {
             <div className="sm:col-span-4">
               <label
                 htmlFor="modelloVeicolo"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-white"
               >
                 Modello Veicolo
               </label>
               <div className="mt-2">
-                <div className="flex items-center rounded-md bg-white pl-3 outline outline-1 -outline-offset-1 outline-gray-300 focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
+                <div className="flex items-center rounded-md bg-[#1c1c1d] pl-3 outline outline-1 -outline-offset-1  focus-within:outline focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600">
                   <input
                     id="modelloVeicolo"
                     name="modelloVeicolo"
@@ -143,7 +143,7 @@ export default function MyFormComponent() {
                     placeholder="Punto, Ibiza, Polo, ..."
                     value={formData.modelloVeicolo}
                     onChange={handleChange}
-                    className="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
+                    className="bg-[#1c1c1d] block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-white placeholder:text-gray-400 focus:outline focus:outline-0 sm:text-sm/6"
                   />
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default function MyFormComponent() {
             <div className="col-span-full">
               <label
                 htmlFor="descrizioneProblema"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-white"
               >
                 Descrivi il problema della tua auto
               </label>
@@ -163,7 +163,7 @@ export default function MyFormComponent() {
                   value={formData.descrizioneProblema}
                   onChange={handleChange}
                   rows={3}
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-[#1c1c1d] px-3 py-1.5 text-base text-white    placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -171,11 +171,11 @@ export default function MyFormComponent() {
             <div className="col-span-full">
               <label
                 htmlFor="cover-photo"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-white"
               >
                 Foto del problema della tua auto (opzionale)
               </label>
-              <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+              <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10 bg-[#1c1c1d]">
                 <div className="text-center">
                   <PhotoIcon
                     aria-hidden="true"
@@ -184,7 +184,7 @@ export default function MyFormComponent() {
                   <div className="mt-4 flex text-sm/6 text-gray-600">
                     <label
                       htmlFor="file-upload"
-                      className="relative cursor-pointer rounded-md bg-white font-semibold text-red-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-red-700 focus-within:ring-offset-2 hover:text-red-700"
+                      className="relative cursor-pointer rounded-md bg-red-900 font-semibold text-white px-2 focus-within:outline-none focus-within:ring-2 focus-within:ring-red-700 focus-within:ring-offset-2 hover:text-red-700"
                     >
                       <span>Upload a file</span>
                       <input
@@ -206,7 +206,7 @@ export default function MyFormComponent() {
         </div>
 
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base/7 font-semibold text-gray-900">
+          <h2 className="text-base/7 font-semibold text-white">
             Informazioni Personali
           </h2>
 
@@ -214,7 +214,7 @@ export default function MyFormComponent() {
             <div className="sm:col-span-3">
               <label
                 htmlFor="nomeUtente"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-white"
               >
                 Nome
               </label>
@@ -226,7 +226,8 @@ export default function MyFormComponent() {
                   value={formData.nomeUtente}
                   onChange={handleChange}
                   autoComplete="given-name"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  placeholder="Mario, Luigi, Giovanni, ..."
+                  className="block w-full rounded-md bg-[#1c1c1d] px-3 py-1.5 text-base text-white  placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -234,7 +235,7 @@ export default function MyFormComponent() {
             <div className="sm:col-span-3">
               <label
                 htmlFor="cognomeUtente"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-white"
               >
                 Cognome
               </label>
@@ -245,8 +246,9 @@ export default function MyFormComponent() {
                   type="text"
                   value={formData.cognomeUtente}
                   onChange={handleChange}
+                  placeholder="Rossi, Bianchi, Verdi, ..."
                   autoComplete="family-name"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-[#1c1c1d] px-3 py-1.5 text-base text-white placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -254,7 +256,7 @@ export default function MyFormComponent() {
             <div className="sm:col-span-4">
               <label
                 htmlFor="emailUtente"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-white"
               >
                 Indirizzo Email
               </label>
@@ -266,7 +268,8 @@ export default function MyFormComponent() {
                   value={formData.emailUtente}
                   onChange={handleChange}
                   autoComplete="email"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  placeholder="email@email.com"
+                  className="block w-full rounded-md bg-[#1c1c1d] px-3 py-1.5 text-base text-white placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -274,7 +277,7 @@ export default function MyFormComponent() {
             <div className="sm:col-span-3">
               <label
                 htmlFor="regione"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-white"
               >
                 Regione
               </label>
@@ -285,7 +288,7 @@ export default function MyFormComponent() {
                   autoComplete="country-name"
                   value={formData.regione}
                   onChange={handleChange}
-                  className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-[#1c1c1d] py-1.5 pl-3 pr-8 text-base text-white focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 >
                   <option>Abruzzo</option>
                   <option>Basilicata</option>
@@ -318,7 +321,7 @@ export default function MyFormComponent() {
             <div className="col-span-full">
               <label
                 htmlFor="indirizzo"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-white"
               >
                 Indirizzo
               </label>
@@ -329,8 +332,9 @@ export default function MyFormComponent() {
                   type="text"
                   value={formData.indirizzo}
                   onChange={handleChange}
+                  placeholder="Via, Piazza, Viale, ..."
                   autoComplete="street-address"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-[#1c1c1d] px-3 py-1.5 text-base text-white placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -338,7 +342,7 @@ export default function MyFormComponent() {
             <div className="sm:col-span-2 sm:col-start-1">
               <label
                 htmlFor="citta"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-white"
               >
                 Cittá
               </label>
@@ -349,8 +353,9 @@ export default function MyFormComponent() {
                   type="text"
                   value={formData.citta}
                   onChange={handleChange}
+                  placeholder="Roma, Milano, Torino, ..."
                   autoComplete="address-level2"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-[#1c1c1d] px-3 py-1.5 text-base text-white placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -358,7 +363,7 @@ export default function MyFormComponent() {
             <div className="sm:col-span-2">
               <label
                 htmlFor="provincia"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-white"
               >
                 Stato / Provincia
               </label>
@@ -369,8 +374,9 @@ export default function MyFormComponent() {
                   type="text"
                   value={formData.provincia}
                   onChange={handleChange}
+                  placeholder="RM, MI, TO, ..."
                   autoComplete="address-level1"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-[#1c1c1d] px-3 py-1.5 text-base text-white placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
@@ -378,7 +384,7 @@ export default function MyFormComponent() {
             <div className="sm:col-span-2">
               <label
                 htmlFor="cap"
-                className="block text-sm/6 font-medium text-gray-900"
+                className="block text-sm/6 font-medium text-white"
               >
                 CAP
               </label>
@@ -389,36 +395,37 @@ export default function MyFormComponent() {
                   type="text"
                   value={formData.cap}
                   onChange={handleChange}
+                  placeholder="XXXXX"
                   autoComplete="postal-code"
-                  className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  className="block w-full rounded-md bg-[#1c1c1d] px-3 py-1.5 text-base text-white placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-2">
               <div className="mb-4">
-                <label className="block font-medium mb-1">
+                <label className="block font-medium mb-1 text-white">
                   Seleziona la data:
                 </label>
                 <DatePicker
                   selected={formData.dataPrenotazione}
                   onChange={(date) => setDataPrenotazione(date)}
                   dateFormat="yyyy-MM-dd"
-                  className="border p-2 rounded w-full"
+                  className=" p-2 rounded w-full bg-[#1c1c1d] text-white"
                 />
               </div>
             </div>
 
             <div className="sm:col-span-4">
               <div className="mb-4">
-                <label className="block font-medium mb-1">
+                <label className="block font-medium mb-1 text-white">
                   Seleziona orario:
                 </label>
                 <TimePicker
                   onChange={setOrarioPrenotazione}
                   value={formData.orarioPrenotazione}
                   disableClock
-                  className="border p-2 rounded w-full"
+                  className=" p-2 rounded w-full bg-[#1c1c1d] text-white"
                 />
               </div>
             </div>
@@ -432,7 +439,7 @@ export default function MyFormComponent() {
         </button>
         <button
           type="submit"
-          className="rounded-md bg-red-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          className="rounded-md bg-red-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
           Save
         </button>
