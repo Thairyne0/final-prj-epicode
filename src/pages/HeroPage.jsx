@@ -3,6 +3,7 @@ import MyBlackNavBar from "../components/MyBlackNavBar";
 import MyNewsLetter from "../components/MyNewsLetter";
 import RotatingText from "../externalComponents/RotatingText";
 import SpotlightCard from "../externalComponents/SpotlightCard/SpotlightCard";
+import MyFooter from "../components/MyFooter";
 
 export default function HeroPage() {
   return (
@@ -57,6 +58,9 @@ export default function HeroPage() {
         </SpotlightCard>
       </div>
       <MyNewsLetter></MyNewsLetter>
+      <footer>
+        <MyFooter></MyFooter>
+      </footer>
     </div>
   );
 }

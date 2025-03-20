@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import MyFormComponent from "../components/MyFormComponent";
 import MyNavBar from "../components/MyRedNavBar";
+import MyFooter from "../components/MyFooter";
 
 export default function AppointmentPage() {
   const { mechanicId } = useParams();
@@ -17,6 +18,9 @@ export default function AppointmentPage() {
           <MyFormComponent mechanicId={Number(mechanicId)} />
         </section>
       </main>
+      <footer>
+        <MyFooter></MyFooter>
+      </footer>
     </div>
   );
 }

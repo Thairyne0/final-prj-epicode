@@ -43,14 +43,14 @@ export default function AppointmentDetailsPage() {
   }, [prenotazioneId]);
 
   return (
-    <div className="bg-white pb-28">
+    <div className="bg-[#1c1c1d] pb-28">
       <header>
         <nav>
           <MyNavBar />
         </nav>
       </header>
       <main>
-        <section className="rounded-md p-6 shadow-md shadow-gray-400 m-10">
+        <section className="rounded-md bg-red-900  p-6 m-10 text-white">
           <h2 className="text-2xl font-bold mb-4">
             Dettagli della prenotazione
           </h2>

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import MyNavBar from "../components/MyRedNavBar";
 import MySearchBar from "../components/MySearchBar";
 import MySearchCard from "../components/MySearchCard";
+import MyFooter from "../components/MyFooter";
 
 export default function SearchPage() {
   const [query, setQuery] = useState("");
@@ -36,7 +37,7 @@ export default function SearchPage() {
   }, [query]);
 
   return (
-    <div className="bg-white pb-28">
+    <div className="bg-[#1c1c1d] pb-28">
       <header>
         <nav>
           <MyNavBar />
@@ -45,8 +46,8 @@ export default function SearchPage() {
       <main className="p-10 px-24">
         <MySearchBar onSearch={handleSearch} />
 
-        <section className="bg-gray-50 rounded-md col-span-4 lg:col-span-3 p-6 shadow-md shadow-gray-400 mt-8">
-          <h2 className="font-bold text-4xl mb-6 bg-red-900 rounded-md p-4 shadow-md shadow-gray-400 text-white">
+        <section className="bg-red-900 rounded-md col-span-4 lg:col-span-3 p-6  mt-8">
+          <h2 className="font-bold text-4xl mb-6 bg-[#1c1c1d] rounded-md p-4 text-white">
             Risultati
           </h2>
 
@@ -61,6 +62,9 @@ export default function SearchPage() {
           ))}
         </section>
       </main>
+      <footer>
+        <MyFooter></MyFooter>
+      </footer>
     </div>
   );
 }

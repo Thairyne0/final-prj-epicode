@@ -1,3 +1,4 @@
+import MyFooter from "../components/MyFooter";
 import MyProfessionalForm from "../components/MyProfessionalForm";
 import MyNavBar from "../components/MyRedNavBar";
 
@@ -20,6 +21,9 @@ export default function ProfessionalPage() {
           <MyProfessionalForm></MyProfessionalForm>
         </section>
       </main>
+      <footer>
+        <MyFooter></MyFooter>
+      </footer>
     </div>
   );
 }

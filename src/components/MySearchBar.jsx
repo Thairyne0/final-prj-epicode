@@ -40,7 +40,7 @@ export default function MySearchBar({ onSearch }) {
         <input
           type="search"
           id="default-search"
-          className="block w-full p-4 ps-10 text-sm text-gray-700 border border-gray-300 rounded-lg bg-gray-50 focus:ring-red-700 focus:border-red-800"
+          className="block w-full p-4 ps-10 text-sm text-white rounded-lg bg-[#2a2a2b] focus:ring-red-700 focus:border-red-800"
           placeholder="Meccanico, Elettrotecnico ..."
           onChange={(e) => setSearchTerm(e.target.value)}
           required

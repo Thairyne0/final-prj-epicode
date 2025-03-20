@@ -1,4 +1,5 @@
 import MyCard from "../components/MyCard";
+import MyFooter from "../components/MyFooter";
 import MyNavBar from "../components/MyRedNavBar";
 // import MyWithButton from "../components/withButton";
 import { useEffect, useState } from "react";
@@ -40,7 +41,9 @@ export default function HomePage() {
           </div>
         </section>
       </main>
-      <footer></footer>
+      <footer>
+        <MyFooter></MyFooter>
+      </footer>
     </div>
   );
 }

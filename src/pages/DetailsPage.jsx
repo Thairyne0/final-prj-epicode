@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import MyNavBar from "../components/MyRedNavBar";
 import image from "../assets/imageCar.jpg";
 import MyDetailsComponent from "../components/MyDetailsComponent";
+import MyFooter from "../components/MyFooter";
 
 export default function DetailsPage() {
   const { id } = useParams();
@@ -78,6 +79,9 @@ export default function DetailsPage() {
           <MyDetailsComponent mechanic={mechanic} />
         </section>
       </main>
+      <footer>
+        <MyFooter></MyFooter>
+      </footer>
     </div>
   );
 }

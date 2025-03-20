@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { jwtDecode } from "jwt-decode";
 import image from "../assets/imageCar.jpg";
 import MyAllPrenotazioneComponent from "../components/MyAllPrenotazioniComponent";
+import MyFooter from "../components/MyFooter";
 
 export default function PersonalPage() {
   const [professionalData, setProfessionalData] = useState(null);
@@ -83,6 +84,9 @@ export default function PersonalPage() {
           <MyAllPrenotazioneComponent idProfessionista={userId} />
         </section>
       </main>
+      <footer>
+        <MyFooter></MyFooter>
+      </footer>
     </div>
   );
 }
