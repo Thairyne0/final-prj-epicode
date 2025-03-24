@@ -25,10 +25,10 @@ export default function HomePage() {
         {/* <MyWithButton /> */}
       </header>
       <main>
-        <section className="grid grid-cols-1 gap-4 p-4 sm:grid-cols-4 mt-10">
-          <div className="bg-gradient-to-b from-red-900 to-black rounded-md p-6  hidden lg:block text-white">
+        <section className="grid grid-cols-1 gap-4 p-4 mt-10">
+          {/* <div className="bg-gradient-to-b from-red-900 to-black rounded-md p-6  hidden lg:block text-white">
             CIAO 1
-          </div>
+          </div> */}
           <div className="bg-gradient-to-b from-red-900 to-black rounded-md col-span-4 lg:col-span-3 p-6 ">
             <h2 className="font-bold text-4xl mb-6 text-white">
               Professionisti in evidenza
