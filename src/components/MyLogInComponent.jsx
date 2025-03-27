@@ -24,6 +24,7 @@ export default function MyLogInComponent() {
 
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
+
         navigate("/home");
       }
     } catch (error) {

@@ -1,6 +1,6 @@
 import { PhotoIcon } from "@heroicons/react/24/solid";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -8,8 +8,8 @@ import TimePicker from "react-time-picker";
 import "react-time-picker/dist/TimePicker.css";
 
 export default function MyFormComponent() {
-  const [dataPrenotazione, setDataPrenotazione] = useState(new Date());
-  const [orarioPrenotazione, setOrarioPrenotazione] = useState("12:00");
+  const [giornoPrenotazione, setDataPrenotazione] = useState(new Date());
+  const [oraPrenotazione, setOrarioPrenotazione] = useState("12:00");
 
   const [formData, setFormData] = useState({
     marcaVeicolo: "",
@@ -23,9 +23,15 @@ export default function MyFormComponent() {
     provincia: "",
     cap: "",
     regione: "",
-    dataPrenotazione: dataPrenotazione.toISOString().split("T")[0],
-    orarioPrenotazione: orarioPrenotazione + ":00",
   });
+
+  useEffect(() => {
+    setFormData((prev) => ({
+      ...prev,
+      dataPrenotazione: giornoPrenotazione.toISOString().split("T")[0],
+      orarioPrenotazione: oraPrenotazione + ":00",
+    }));
+  }, [giornoPrenotazione, oraPrenotazione]);
 
   const { id } = useParams();
 
@@ -408,7 +414,7 @@ export default function MyFormComponent() {
                   Seleziona la data:
                 </label>
                 <DatePicker
-                  selected={formData.dataPrenotazione}
+                  selected={giornoPrenotazione}
                   onChange={(date) => setDataPrenotazione(date)}
                   dateFormat="yyyy-MM-dd"
                   className=" p-2 rounded w-full bg-[#1c1c1d] text-white"
@@ -423,7 +429,7 @@ export default function MyFormComponent() {
                 </label>
                 <TimePicker
                   onChange={setOrarioPrenotazione}
-                  value={formData.orarioPrenotazione}
+                  value={oraPrenotazione}
                   disableClock
                   className=" p-2 rounded w-full bg-[#1c1c1d] text-white"
                 />

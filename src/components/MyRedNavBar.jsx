@@ -16,6 +16,7 @@ const navigation = [
   { name: "About Us", to: "/aboutUs", current: false },
   { name: "Info", to: "/info", current: false },
   { name: "Cerca", to: "/search", current: false },
+  { name: "Crea la tua pagina", to: "/professional", current: false },
 ];
 
 function classNames(...classes) {

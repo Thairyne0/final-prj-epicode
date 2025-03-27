@@ -80,13 +80,13 @@ export default function MyProfessionalForm() {
     <form onSubmit={handleSubmit}>
       <div className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <p className="mt-1 text-base text-gray-600">
+          <p className="mt-1 text-base text-white">
             Queste informazioni saranno visualizzate sulla tua pagina personale.
           </p>
 
           <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="col-span-full">
-              <label className="block text-sm font-medium text-gray-900">
+              <label className="block text-sm font-medium text-white mb-2">
                 Descrivi te stesso e la tua professionalità
               </label>
               <textarea
@@ -101,13 +101,13 @@ export default function MyProfessionalForm() {
         </div>
 
         <div className="border-b border-gray-900/10 pb-12">
-          <h2 className="text-base font-semibold text-gray-900">
+          <h2 className="text-base font-semibold text-white">
             Informazioni Personali
           </h2>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div className="sm:col-span-3">
-              <label className="block text-sm font-medium text-gray-900">
+              <label className="block text-sm font-medium text-white mb-2">
                 Nome
               </label>
               <input
@@ -120,7 +120,7 @@ export default function MyProfessionalForm() {
             </div>
 
             <div className="sm:col-span-3">
-              <label className="block text-sm font-medium text-gray-900">
+              <label className="block text-sm font-medium text-white mb-2">
                 Cognome
               </label>
               <input
@@ -133,7 +133,7 @@ export default function MyProfessionalForm() {
             </div>
 
             <div className="sm:col-span-4">
-              <label className="block text-sm font-medium text-gray-900">
+              <label className="block text-sm font-medium text-white mb-2">
                 Indirizzo Email
               </label>
               <input
@@ -146,7 +146,7 @@ export default function MyProfessionalForm() {
             </div>
 
             <div className="sm:col-span-2">
-              <label className="block text-sm font-medium text-gray-900">
+              <label className="block text-sm font-medium text-white mb-2">
                 Regione
               </label>
               <input
@@ -159,7 +159,7 @@ export default function MyProfessionalForm() {
             </div>
 
             <div className="sm:col-span-3">
-              <label className="block text-sm font-medium text-gray-900">
+              <label className="block text-sm font-medium text-white mb-2">
                 Nome Azienda
               </label>
               <input
@@ -172,7 +172,7 @@ export default function MyProfessionalForm() {
             </div>
 
             <div className="sm:col-span-3">
-              <label className="block text-sm font-medium text-gray-900">
+              <label className="block text-sm font-medium text-white mb-2">
                 Indirizzo
               </label>
               <input
@@ -185,7 +185,7 @@ export default function MyProfessionalForm() {
             </div>
 
             <div className="sm:col-span-2">
-              <label className="block text-sm font-medium text-gray-900">
+              <label className="block text-sm font-medium text-white mb-2">
                 Città
               </label>
               <input
@@ -198,7 +198,7 @@ export default function MyProfessionalForm() {
             </div>
 
             <div className="sm:col-span-2">
-              <label className="block text-sm font-medium text-gray-900">
+              <label className="block text-sm font-medium text-white mb-2">
                 Provincia
               </label>
               <input
@@ -211,7 +211,7 @@ export default function MyProfessionalForm() {
             </div>
 
             <div className="sm:col-span-2">
-              <label className="block text-sm font-medium text-gray-900">
+              <label className="block text-sm font-medium text-white mb-2">
                 CAP
               </label>
               <input
@@ -227,12 +227,15 @@ export default function MyProfessionalForm() {
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <button type="button" className="text-sm font-semibold text-gray-900">
+        <button
+          type="button"
+          className="text-sm font-semibold text-gray-900 hover:text-red-600"
+        >
           Annulla
         </button>
         <button
           type="submit"
-          className="rounded-md bg-red-900 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-700"
+          className="rounded-md bg-red-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500"
         >
           Salva
         </button>
