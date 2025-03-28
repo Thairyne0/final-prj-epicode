@@ -2,24 +2,7 @@ import { useState } from "react";
 
 const token = localStorage.getItem("token");
 
-function getUserIdFromToken(token) {
-  if (!token) return null;
-
-  try {
-    const base64Url = token.split(".")[1];
-    const base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-    const jsonPayload = JSON.parse(atob(base64));
-
-    console.log(jsonPayload);
-
-    return jsonPayload.userId;
-  } catch (error) {
-    console.error("Errore nella decodifica del token:", error);
-    return null;
-  }
-}
-
-const userId = getUserIdFromToken(token);
+const userId = localStorage.getItem("userId");
 
 export default function MyProfessionalForm() {
   const [formData, setFormData] = useState({
